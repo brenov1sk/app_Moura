@@ -35,7 +35,7 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> {
 
         opcoes opcao = opcoes.get(position);
         holder.titulo.setText(opcao.getTitulo());
-        holder.saldo.setText(opcao.getSaldo());
+        //holder.saldo.setText(opcao.getSaldo());
 
     }
 
@@ -46,13 +46,13 @@ public class Adaptador extends RecyclerView.Adapter<Adaptador.MyViewHolder> {
 
     public class MyViewHolder extends RecyclerView.ViewHolder {
         TextView titulo;
-        TextView saldo;
+        //TextView saldo;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
             titulo = itemView.findViewById(R.id.textTitulo);
-            saldo = itemView.findViewById(R.id.textSaldo);
+            //saldo = itemView.findViewById(R.id.textSaldo);
 
         }
     }

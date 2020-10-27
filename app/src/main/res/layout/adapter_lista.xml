@@ -2,29 +2,18 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_margin="1dp"
+    android:layout_margin="5dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <TextView
+        android:id="@+id/textTitulo"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="horizontal">
+        android:layout_margin="14sp"
+        android:text=" Titulo"
+        android:textAllCaps="false"
+        android:textColor="#000000"
+        android:textSize="25sp"
+        android:textStyle="bold|italic" />
 
-        <TextView
-            android:id="@+id/textTitulo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="5"
-            android:text="Titulo"
-            android:textSize="24sp"
-            android:textStyle="bold" />
-
-        <TextView
-            android:id="@+id/textSaldo"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="Saldo"
-            android:textSize="18sp" />
-    </LinearLayout>
 </LinearLayout>

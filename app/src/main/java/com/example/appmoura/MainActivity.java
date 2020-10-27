@@ -1,14 +1,18 @@
 package com.example.appmoura;
 
+import android.content.Intent;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.Bundle;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 import android.widget.ListView;
 
 import com.google.android.material.textfield.TextInputEditText;
@@ -29,18 +33,46 @@ public class MainActivity extends AppCompatActivity {
 
         listaOp = findViewById(R.id.listaOp);
 
-        //listagem de itens
+        //Listagem de itens
         this.opcoes();
 
-        //adaptador
+        //Adaptador
         Adaptador adaptador = new Adaptador(listaOpcoes);
 
 
-        //configurar Recycleview
+        //Configurar Recycleview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());//instanciando o layout
         listaOp.setLayoutManager(layoutManager);//define para listaOp o layout criando acima
         listaOp.setHasFixedSize(true);
+        listaOp.addItemDecoration(new DividerItemDecoration(this, LinearLayout.VERTICAL));
         listaOp.setAdapter(adaptador);//define o adaptador do layout
+
+        //Evento de click
+        listaOp.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        listaOp,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+                            @Override
+                            public void onItemClick(View view, int position) {
+                                opcoes opcao = listaOpcoes.get(position);
+                                Intent intent = new Intent(getApplicationContext(), inicioTurno.class);
+                                startActivity(intent);
+
+                            }
+
+                            @Override
+                            public void onLongItemClick(View view, int position) {
+
+                            }
+
+                            @Override
+                            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+
+                            }
+                        }
+                )
+        );
     }
 
     public void opcoes(){
@@ -71,11 +103,5 @@ public class MainActivity extends AppCompatActivity {
         opcao = new opcoes("Fechamento do turno","0");
         this.listaOpcoes.add(opcao);
     }
-
-//    //botao salvar
-//    public void enviar(View view){
-//        TextInputEditText campoEquipe = findViewById(R.id.editEquipe);
-//        TextInputEditText campoMeta = findViewById(R.id.editMeta);
-//        TextInputEditText campoObs = findViewById(R.id.editObservacao);
-    }
+}
 
