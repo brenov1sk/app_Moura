@@ -9,16 +9,16 @@ import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
 
-public class inicioTurno extends AppCompatActivity {
+public class hora1 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio_turno);
+        setContentView(R.layout.activity_hora1);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
-        getSupportActionBar().setTitle("Inicio do turno");     //Titulo para ser exibido na sua Action Bar em frente à seta
+        getSupportActionBar().setTitle("Primeira hora");     //Titulo para ser exibido na sua Action Bar em frente à seta
     }
 
     @Override
@@ -34,9 +34,7 @@ public class inicioTurno extends AppCompatActivity {
     }
 
     //botao salvar
-    public void salvarInicio(View view) {
-        TextInputEditText campoGrupo = findViewById(R.id.editGrupo);
-        TextInputEditText campoMeta = findViewById(R.id.editMeta);
-        TextInputEditText campoObs = findViewById(R.id.editObs);;
-    }
+    public void salvar1(View view) {
+        TextInputEditText acumulado1 = findViewById(R.id.acumulado1);
+        TextInputEditText obs1 = findViewById(R.id.obs1);
 }

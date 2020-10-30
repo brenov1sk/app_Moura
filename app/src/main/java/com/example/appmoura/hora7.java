@@ -5,20 +5,17 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
-import android.view.View;
 
-import com.google.android.material.textfield.TextInputEditText;
-
-public class inicioTurno extends AppCompatActivity {
+public class hora7 extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_inicio_turno);
+        setContentView(R.layout.activity_hora7);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
-        getSupportActionBar().setTitle("Inicio do turno");     //Titulo para ser exibido na sua Action Bar em frente à seta
+        getSupportActionBar().setTitle("Sétima hora");     //Titulo para ser exibido na sua Action Bar em frente à seta
     }
 
     @Override
@@ -32,11 +29,5 @@ public class inicioTurno extends AppCompatActivity {
         }
         return true;
     }
-
-    //botao salvar
-    public void salvarInicio(View view) {
-        TextInputEditText campoGrupo = findViewById(R.id.editGrupo);
-        TextInputEditText campoMeta = findViewById(R.id.editMeta);
-        TextInputEditText campoObs = findViewById(R.id.editObs);;
-    }
 }
+

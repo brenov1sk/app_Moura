@@ -9,6 +9,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".fimTurno"></activity>
+        <activity android:name=".hora7" />
+        <activity android:name=".hora6" />
+        <activity android:name=".hora5" />
+        <activity android:name=".hora4" />
+        <activity android:name=".hora3" />
+        <activity android:name=".hora2" />
+        <activity android:name=".hora1" />
         <activity android:name=".inicioTurno" />
         <activity android:name=".MainActivity">
             <intent-filter>

@@ -1,5 +1,6 @@
 package com.example.appmoura;
 
+import android.content.Context;
 import android.content.Intent;
 import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,6 +25,7 @@ public class MainActivity extends AppCompatActivity {
 
     private RecyclerView listaOp;//criaçao do método
     private List<opcoes> listaOpcoes = new ArrayList<>();
+    private Context context;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,10 +57,53 @@ public class MainActivity extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                opcoes opcao = listaOpcoes.get(position);
-                                Intent intent = new Intent(getApplicationContext(), inicioTurno.class);
-                                startActivity(intent);
-
+                                switch (position){
+                                    case 0:
+                                        opcoes opcao = listaOpcoes.get(position);
+                                        Intent intent = new Intent(getApplicationContext(), inicioTurno.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 1:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora1.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 2:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora2.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 3:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora3.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 4:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora4.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 5:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora5.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 6:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora6.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 7:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), hora7.class);
+                                        startActivity(intent);
+                                        break;
+                                    case 8:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(), fimTurno.class);
+                                        startActivity(intent);
+                                        break;
+                                }
                             }
 
                             @Override
@@ -103,5 +148,7 @@ public class MainActivity extends AppCompatActivity {
         opcao = new opcoes("Fechamento do turno","0");
         this.listaOpcoes.add(opcao);
     }
+
+
 }
 
