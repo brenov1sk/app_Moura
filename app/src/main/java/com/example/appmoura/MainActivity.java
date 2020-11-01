@@ -15,6 +15,7 @@ import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
@@ -23,6 +24,7 @@ import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
+    private TextView testeMain;
     private RecyclerView listaOp;//criaçao do método
     private List<opcoes> listaOpcoes = new ArrayList<>();
     private Context context;
@@ -31,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
 
         listaOp = findViewById(R.id.listaOp);
 
@@ -118,8 +119,29 @@ public class MainActivity extends AppCompatActivity {
                         }
                 )
         );
+
+        //Recupera dados da activity
+        Bundle nomeGrupo = getIntent().getExtras();
+        if (nomeGrupo != null) {
+        String grupo0 = nomeGrupo.getString("grupo");
+        String meta0 = nomeGrupo.getString("meta");
+        String obs0 = nomeGrupo.getString("meta");
+
+//        testeMain.setText("oioioi");
+        }
+
+//        int p1, meta1, saldo;
+//
+//
+//        meta1 = Integer.parseInt(meta0);
+//        saldo = 30 + meta1;
+//
+//        System.out.println(saldo);
+//        testeMain.setText(saldo);
+//        }
     }
 
+    //opções do recyclerView
     public void opcoes(){
         opcoes opcao = new opcoes("Início do turno","0");
         this.listaOpcoes.add(opcao);
@@ -148,7 +170,5 @@ public class MainActivity extends AppCompatActivity {
         opcao = new opcoes("Fechamento do turno","0");
         this.listaOpcoes.add(opcao);
     }
-
-
 }
 

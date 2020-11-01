@@ -2,19 +2,33 @@ package com.example.appmoura;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
+import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 
 public class inicioTurno extends AppCompatActivity {
 
+    //Definindo as referencias
+    private TextInputEditText editGrupo, editMeta, editObs;
+    private TextView teste;
+    private Button enviarInicio;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_turno);
+
+        //Inicializando os itens
+        editGrupo = findViewById(R.id.editGrupo);
+        editMeta = findViewById(R.id.editMeta);
+        editObs = findViewById(R.id.editObs);
+        teste = findViewById(R.id.testekkk);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
@@ -33,10 +47,21 @@ public class inicioTurno extends AppCompatActivity {
         return true;
     }
 
-    //botao salvar
-    public void salvarInicio(View view) {
-        TextInputEditText campoGrupo = findViewById(R.id.editGrupo);
-        TextInputEditText campoMeta = findViewById(R.id.editMeta);
-        TextInputEditText campoObs = findViewById(R.id.editObs);;
+    //Criando método para salvar
+    public void salvar0 (View view){
+
+        //Recuperar valores digitados
+        String grupo0 = editGrupo.getText().toString();
+        String meta0 = editMeta.getText().toString();
+        String obs0 = editObs.getText().toString();
+
+        teste.setText(grupo0); //text view de teste
+
+        Intent salvar = new Intent(inicioTurno.this, MainActivity.class);
+        salvar.putExtra("grupo", grupo0);
+        salvar.putExtra("meta", meta0);
+        salvar.putExtra("obs", obs0);
+
+        startActivity(salvar);
     }
 }

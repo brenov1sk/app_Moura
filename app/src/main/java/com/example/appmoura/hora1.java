@@ -28,7 +28,8 @@ public class hora1 extends AppCompatActivity {
                 startActivity(new Intent(this, MainActivity.class));  //O efeito ao ser pressionado do botão (no caso abre a activity)
                 finishAffinity();  //Método para matar a activity e não deixa-lá indexada na pilhagem
                 break;
-            default:break;
+            default:
+                break;
         }
         return true;
     }
@@ -37,4 +38,5 @@ public class hora1 extends AppCompatActivity {
     public void salvar1(View view) {
         TextInputEditText acumulado1 = findViewById(R.id.acumulado1);
         TextInputEditText obs1 = findViewById(R.id.obs1);
+    }
 }
