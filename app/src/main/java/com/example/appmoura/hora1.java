@@ -58,21 +58,20 @@ public class hora1 extends AppCompatActivity {
         //Passando dados
         Intent salvar1 = new Intent(hora1.this, MainActivity.class);
 
-        bd.child("hora1").child("acumulado").push().setValue(ACUMULADO1);
-        bd.child("hora1").child("obs").push().setValue(OBS1);
-
-        System.out.println("hora1" + ACUMULADO1);
-        System.out.println("hora1" + OBS1);
-
-        meta = 45;
+        meta = 100; //RESGATAR DO DB
         ac1 = Integer.parseInt(ACUMULADO1);
         projecao1 = ((ac1/1)*8);
         saldo1 = projecao1 - meta;
 
+        bd.child("hora1").child("acumulado").push().setValue(ACUMULADO1);
+        bd.child("hora1").child("obs").push().setValue(OBS1);
         bd.child("hora1").child("projecao").push().setValue(projecao1);
         bd.child("hora1").child("saldo").push().setValue(saldo1);
-        
-        System.out.println("a projeçao 1 e " + projecao1 + "e o saldo e " + saldo1);
+
+        System.out.println("hora1 " + ACUMULADO1);
+        System.out.println("hora1 " + OBS1);
+        System.out.println(ac1);
+        System.out.println("a projeçao1 e " + projecao1 + " e o saldo e " + saldo1);
 
         startActivity(salvar1);
     }

@@ -77,5 +77,5 @@ public class inicioTurno extends AppCompatActivity {
         System.out.println("INICIO " + meta0);
         System.out.println("INICIO " + obs0);
         startActivity(salvar0);
- }
+    }
 }

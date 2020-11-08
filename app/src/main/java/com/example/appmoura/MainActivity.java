@@ -35,10 +35,6 @@ public class MainActivity extends AppCompatActivity {
 
     private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
 
-    Intent salvar0;
-
-    int saldo1;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -128,8 +124,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                 )
         );
-
-        //Recupera dados da activity InicioTurno
     }
 
     //opções do recyclerView
