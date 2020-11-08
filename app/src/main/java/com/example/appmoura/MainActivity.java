@@ -18,16 +18,26 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView testeMain;
+
+    public int metaInicial;
+
     private RecyclerView listaOp;//criaçao do método
     private List<opcoes> listaOpcoes = new ArrayList<>();
     private Context context;
+
+    private DatabaseReference referencia = FirebaseDatabase.getInstance().getReference();
+
+    Intent salvar0;
+
+    int saldo1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,7 +51,6 @@ public class MainActivity extends AppCompatActivity {
 
         //Adaptador
         Adaptador adaptador = new Adaptador(listaOpcoes);
-
 
         //Configurar Recycleview
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getApplicationContext());//instanciando o layout
@@ -120,25 +129,7 @@ public class MainActivity extends AppCompatActivity {
                 )
         );
 
-        //Recupera dados da activity
-        Bundle nomeGrupo = getIntent().getExtras();
-        if (nomeGrupo != null) {
-        String grupo0 = nomeGrupo.getString("grupo");
-        String meta0 = nomeGrupo.getString("meta");
-        String obs0 = nomeGrupo.getString("meta");
-
-//        testeMain.setText("oioioi");
-        }
-
-//        int p1, meta1, saldo;
-//
-//
-//        meta1 = Integer.parseInt(meta0);
-//        saldo = 30 + meta1;
-//
-//        System.out.println(saldo);
-//        testeMain.setText(saldo);
-//        }
+        //Recupera dados da activity InicioTurno
     }
 
     //opções do recyclerView

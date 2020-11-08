@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "679105208724",
+    "firebase_url": "https://projmoura.firebaseio.com",
+    "project_id": "projmoura",
+    "storage_bucket": "projmoura.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:679105208724:android:9f0feb97051b72867f6f81",
+        "android_client_info": {
+          "package_name": "com.example.appmoura"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "679105208724-ugdufdrk7b84ohibptaivvq3b82b0mtv.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.appmoura",
+            "certificate_hash": "13c2a724abf4d3885b812a703a24fa4dffc2f183"
+          }
+        },
+        {
+          "client_id": "679105208724-4ee0b0lvgub807j3fcq3802iajk90vme.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA4dnaRBdaorkAoHVMyelT2CQdzo-8RZoE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "679105208724-4ee0b0lvgub807j3fcq3802iajk90vme.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

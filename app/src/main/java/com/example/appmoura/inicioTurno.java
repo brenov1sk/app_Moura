@@ -11,6 +11,8 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class inicioTurno extends AppCompatActivity {
 
@@ -18,6 +20,10 @@ public class inicioTurno extends AppCompatActivity {
     private TextInputEditText editGrupo, editMeta, editObs;
     private TextView teste;
     private Button enviarInicio;
+
+    private DatabaseReference bd = FirebaseDatabase.getInstance().getReference();
+
+    int metaInicio;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,8 +34,11 @@ public class inicioTurno extends AppCompatActivity {
         editGrupo = findViewById(R.id.editGrupo);
         editMeta = findViewById(R.id.editMeta);
         editObs = findViewById(R.id.editObs);
-        teste = findViewById(R.id.testekkk);
+        teste = findViewById(R.id.testekkk);//apagar depois
+        enviarInicio = findViewById(R.id.salvar0);
 
+
+        //TOOLBAR
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
         getSupportActionBar().setTitle("Inicio do turno");     //Titulo para ser exibido na sua Action Bar em frente à seta
@@ -47,7 +56,7 @@ public class inicioTurno extends AppCompatActivity {
         return true;
     }
 
-    //Criando método para salvar
+    //Criando método para salvaree
     public void salvar0 (View view){
 
         //Recuperar valores digitados
@@ -55,13 +64,19 @@ public class inicioTurno extends AppCompatActivity {
         String meta0 = editMeta.getText().toString();
         String obs0 = editObs.getText().toString();
 
-        teste.setText(grupo0); //text view de teste
+        //Passa dados para outra activity
+        Intent salvar0 = new Intent(inicioTurno.this, MainActivity.class);
+//        salvar0.putExtra("grupo", grupo0);
+//        salvar0.putExtra("meta", meta0);
+//        salvar0.putExtra("obs", obs0);
 
-        Intent salvar = new Intent(inicioTurno.this, MainActivity.class);
-        salvar.putExtra("grupo", grupo0);
-        salvar.putExtra("meta", meta0);
-        salvar.putExtra("obs", obs0);
+        bd.child("inicioTurno").child("grupo").setValue(grupo0);
+        bd.child("inicioTurno").child("meta").setValue(meta0);
+        bd.child("inicioTurno").child("obs").setValue(obs0);
 
-        startActivity(salvar);
+        System.out.println("INICIO " + grupo0);
+        System.out.println("INICIO " + meta0);
+        System.out.println("INICIO " + obs0);
+        startActivity(salvar0);
     }
 }

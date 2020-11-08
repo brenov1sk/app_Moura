@@ -11,10 +11,16 @@ import com.google.android.material.textfield.TextInputEditText;
 
 public class hora1 extends AppCompatActivity {
 
+    private TextInputEditText acumulado1;
+    private TextInputEditText obs1;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hora1);
+
+        acumulado1 = findViewById(R.id.acumulado1);
+        obs1 = findViewById(R.id.obs1);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
@@ -34,9 +40,21 @@ public class hora1 extends AppCompatActivity {
         return true;
     }
 
+
     //botao salvar
     public void salvar1(View view) {
-        TextInputEditText acumulado1 = findViewById(R.id.acumulado1);
-        TextInputEditText obs1 = findViewById(R.id.obs1);
+
+        //Recuperando valores
+        String ACUMULADO1 = acumulado1.getText().toString();
+        String OBS1 = obs1.getText().toString();
+
+        //Passando dados
+        Intent salvar1 = new Intent(hora1.this, MainActivity.class);
+        salvar1.putExtra("acumulado1", ACUMULADO1);
+        salvar1.putExtra("obs1", OBS1);
+
+        System.out.println("hora1" + ACUMULADO1);
+
+        startActivity(salvar1);
     }
 }
