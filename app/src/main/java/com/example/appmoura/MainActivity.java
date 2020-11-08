@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
                         new RecyclerItemClickListener.OnItemClickListener() {
                             @Override
                             public void onItemClick(View view, int position) {
-                                switch (position){
+                                switch (position) {
                                     case 0:
                                         opcoes opcao = listaOpcoes.get(position);
                                         Intent intent = new Intent(getApplicationContext(), inicioTurno.class);
@@ -109,6 +109,11 @@ public class MainActivity extends AppCompatActivity {
                                         intent = new Intent(getApplicationContext(), fimTurno.class);
                                         startActivity(intent);
                                         break;
+                                    case 9:
+                                        opcao = listaOpcoes.get(position);
+                                        intent = new Intent(getApplicationContext(),total.class);
+                                        startActivity(intent);
+                                        break;
                                 }
                             }
 
@@ -124,7 +129,6 @@ public class MainActivity extends AppCompatActivity {
                         }
                 )
         );
-    }
 
     //opções do recyclerView
     public void opcoes(){
@@ -153,6 +157,9 @@ public class MainActivity extends AppCompatActivity {
         this.listaOpcoes.add(opcao);
 
         opcao = new opcoes("Fechamento do turno","0");
+        this.listaOpcoes.add(opcao);
+
+        opcao = new opcoes("Total", "0");
         this.listaOpcoes.add(opcao);
     }
 }

@@ -47,7 +47,6 @@ public class hora1 extends AppCompatActivity {
         return true;
     }
 
-
     //botao salvar
     public void salvar1(View view) {
 
