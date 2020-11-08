@@ -10,6 +10,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -23,12 +24,13 @@ public class inicioTurno extends AppCompatActivity {
 
     private DatabaseReference bd = FirebaseDatabase.getInstance().getReference();
 
-    int metaInicio;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_inicio_turno);
+
+        //Cadastro de usuario
+
 
         //Inicializando os itens
         editGrupo = findViewById(R.id.editGrupo);
@@ -66,17 +68,14 @@ public class inicioTurno extends AppCompatActivity {
 
         //Passa dados para outra activity
         Intent salvar0 = new Intent(inicioTurno.this, MainActivity.class);
-//        salvar0.putExtra("grupo", grupo0);
-//        salvar0.putExtra("meta", meta0);
-//        salvar0.putExtra("obs", obs0);
 
-        bd.child("inicioTurno").child("grupo").setValue(grupo0);
-        bd.child("inicioTurno").child("meta").setValue(meta0);
-        bd.child("inicioTurno").child("obs").setValue(obs0);
+        bd.child("inicioTurno").child("grupo").push().setValue(grupo0);
+        bd.child("inicioTurno").child("meta").push().setValue(meta0);
+        bd.child("inicioTurno").child("obs").push().setValue(obs0);
 
         System.out.println("INICIO " + grupo0);
         System.out.println("INICIO " + meta0);
         System.out.println("INICIO " + obs0);
         startActivity(salvar0);
-    }
+ }
 }

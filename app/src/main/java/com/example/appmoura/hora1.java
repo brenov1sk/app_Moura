@@ -8,11 +8,18 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 public class hora1 extends AppCompatActivity {
 
     private TextInputEditText acumulado1;
     private TextInputEditText obs1;
+
+    private DatabaseReference bd = FirebaseDatabase.getInstance().getReference();
+
+    int saldo1, ac1, meta;
+    int projecao1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,10 +57,22 @@ public class hora1 extends AppCompatActivity {
 
         //Passando dados
         Intent salvar1 = new Intent(hora1.this, MainActivity.class);
-        salvar1.putExtra("acumulado1", ACUMULADO1);
-        salvar1.putExtra("obs1", OBS1);
+
+        bd.child("hora1").child("acumulado").push().setValue(ACUMULADO1);
+        bd.child("hora1").child("obs").push().setValue(OBS1);
 
         System.out.println("hora1" + ACUMULADO1);
+        System.out.println("hora1" + OBS1);
+
+        meta = 45;
+        ac1 = Integer.parseInt(ACUMULADO1);
+        projecao1 = ((ac1/1)*8);
+        saldo1 = projecao1 - meta;
+
+        bd.child("hora1").child("projecao").push().setValue(projecao1);
+        bd.child("hora1").child("saldo").push().setValue(saldo1);
+        
+        System.out.println("a projeçao 1 e " + projecao1 + "e o saldo e " + saldo1);
 
         startActivity(salvar1);
     }
