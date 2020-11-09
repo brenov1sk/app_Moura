@@ -129,6 +129,7 @@ public class MainActivity extends AppCompatActivity {
                         }
                 )
         );
+    }
 
     //opções do recyclerView
     public void opcoes(){

@@ -3,9 +3,11 @@ package com.example.appmoura;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Toast;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.database.DatabaseReference;
@@ -18,16 +20,16 @@ public class hora2 extends AppCompatActivity {
 
     private DatabaseReference bd = FirebaseDatabase.getInstance().getReference();
 
-//    int ;
     float saldo2, projecao2, ac2, meta;
+    private final String DADOS = "Dados";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_hora2);
 
-        acumulado2 = findViewById(R.id.acumulado2);
-        obs2 = findViewById(R.id.obs2);
+        acumulado2 = findViewById(R.id.ac2);
+        obs2 = findViewById(R.id.ob2);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão
@@ -48,28 +50,41 @@ public class hora2 extends AppCompatActivity {
 
     public void salvar2 (View view){
 
-        //Recuperar valores digitados
-        String ACUMULADO2 = acumulado2.getText().toString();
-        String OBS2 = obs2.getText().toString();
+        SharedPreferences preferences = getSharedPreferences(DADOS, 0);
+        SharedPreferences.Editor editor = preferences.edit();
 
-        //Passa dados para outra activity
-        Intent salvar2 = new Intent(hora2.this, MainActivity.class);
+        if (acumulado2.getText().toString().equals("") ){
+            Toast.makeText(getApplicationContext(), "Digite o acumulado 2", Toast.LENGTH_LONG).show();
+        } else {
 
-        meta = 100; //RESGATR DB
-        ac2 = Integer.parseInt(ACUMULADO2);
-        projecao2 = ((ac2/2)*7);
-        saldo2 = projecao2 - meta;
+            //Recuperar valores digitados
+            String ACUMULADO2 = acumulado2.getText().toString();
+            String OBS2 = obs2.getText().toString();
 
-        bd.child("hora2").child("acumulado").push().setValue(ACUMULADO2);
-        bd.child("hora2").child("obs").push().setValue(OBS2);
-        bd.child("hora2").child("projecao").push().setValue(projecao2);
-        bd.child("hora2").child("saldo").push().setValue(saldo2);
-        
-        System.out.println("INICIO " + ACUMULADO2);
-        System.out.println("INICIO " + OBS2);
-        System.out.println(ac2);
-        System.out.println("a projeçao e " + projecao2 + " e o saldo e " + saldo2);
+            //Passa dados para outra activity
+            Intent salvar2 = new Intent(hora2.this, MainActivity.class);
 
-        startActivity(salvar2);
+            String metadiaria = preferences.getString("meta", "0");
+            meta = Float.parseFloat(metadiaria);
+            ac2 = Float.parseFloat(ACUMULADO2);
+            projecao2 = ((ac2 / 2) * 7);
+            saldo2 = projecao2 - meta;
+
+            bd.child("hora2").child("acumulado").push().setValue(ACUMULADO2);
+            bd.child("hora2").child("obs").push().setValue(OBS2);
+            bd.child("hora2").child("projecao").push().setValue(projecao2);
+            bd.child("hora2").child("saldo").push().setValue(saldo2);
+
+            String proje = Float.toString(projecao2);
+            String sald = Float.toString(saldo2);
+
+            editor.putString("acumulado2", ACUMULADO2);
+            editor.putString("projeção2", proje);
+            editor.putString("saldo2", sald);
+            editor.putString("obs2", OBS2);
+            editor.commit();
+
+            startActivity(salvar2);
+        }
     }
 }

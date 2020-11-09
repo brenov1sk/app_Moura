@@ -20,7 +20,7 @@
         app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/acumulado2"
+            android:id="@+id/ac2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Acumulado 2ª hora"
@@ -42,7 +42,7 @@
         app:layout_constraintTop_toBottomOf="@+id/TextInputLayout">
 
         <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/obs2"
+            android:id="@+id/ob2"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Observação" />
