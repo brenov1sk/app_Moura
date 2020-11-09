@@ -71,7 +71,7 @@ public class hora3 extends AppCompatActivity {
             String metadiaria = preferences.getString("meta", "0");
             meta = Float.parseFloat(metadiaria);
             ac3 = Float.parseFloat(ACUMULADO3);
-            projecao3 = ((ac3 / 3) * 6);
+            projecao3 = ((ac3 / 3) * 8);
             saldo3 = projecao3 - meta;
 
             bd.child("hora3").child("acumulado").push().setValue(ACUMULADO3);
