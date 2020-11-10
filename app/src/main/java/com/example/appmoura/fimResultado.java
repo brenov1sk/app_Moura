@@ -11,7 +11,7 @@ import android.widget.TextView;
 public class fimResultado extends AppCompatActivity {
 
     private final String DADOS = "Dados";
-    private TextView prodFinal, saldoFinal, scrap, sucata;
+    private TextView prodFinal, saldoFinal, scrap, sucata, modelo;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -24,12 +24,15 @@ public class fimResultado extends AppCompatActivity {
         saldoFinal = findViewById(R.id.saldoFinal);
         scrap = findViewById(R.id.scrap);
         sucata = findViewById(R.id.sucata);
+        modelo = findViewById(R.id.modelo);
 
         //fim do turno
+        String model = preferences.getString("modelo","");
         String pFinal = preferences.getString("prodFinal","");
         String sFinal = preferences.getString("saldoFinal","");
         String scrapp = preferences.getString("scrap","");
         String sucat = preferences.getString("sucata","");
+        modelo.setText("MODELO: " + model);
         prodFinal.setText("PRODUÇÃO FINAL: " + pFinal);
         saldoFinal.setText("SALDO FINAL: " + sFinal);
         scrap.setText("SCRAP: " + scrapp);

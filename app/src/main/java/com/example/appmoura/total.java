@@ -25,6 +25,8 @@ public class total extends AppCompatActivity {
     private TextView ac6, proj6, s6, ob6;
     private TextView ac7, proj7, s7, ob7;
 
+    private TextView prodFinal, saldoFinal, scrap, sucata, modelo;
+
     private final String DADOS = "Dados";
 
     @Override
@@ -72,6 +74,8 @@ public class total extends AppCompatActivity {
         proj7 = findViewById(R.id.proj7);
         s7 = findViewById(R.id.s7);
         ob7 = findViewById(R.id.ob7);
+
+
 
         //activity inicio
         String grupo = preferences.getString("grupo","");

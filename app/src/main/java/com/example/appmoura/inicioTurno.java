@@ -81,10 +81,11 @@ public class inicioTurno extends AppCompatActivity {
 
             bd.child("InicioTurno").child("grupo").push().setValue(grupo0);
             bd.child("InicioTurno").child("meta").push().setValue(meta0);
-            bd.child("InicioTurno").child("obs").push().setValue(obs0);
+            bd.child("InicioTurno").child("modelo").push().setValue(obs0);
 
             editor.putString("grupo", grupo0);
             editor.putString("meta", meta0);
+            editor.putString("modelo", obs0);
             editor.commit();
 
             startActivity(salvar0);
