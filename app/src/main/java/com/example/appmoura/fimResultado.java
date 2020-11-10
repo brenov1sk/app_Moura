@@ -30,10 +30,10 @@ public class fimResultado extends AppCompatActivity {
         String sFinal = preferences.getString("saldoFinal","");
         String scrapp = preferences.getString("scrap","");
         String sucat = preferences.getString("sucata","");
-        prodFinal.setText("Produção final: " + pFinal);
-        saldoFinal.setText("Saldo final: " + sFinal);
-        scrap.setText("Scrap: " + scrapp);
-        sucata.setText("Sucata: " + sucat);
+        prodFinal.setText("PRODUÇÃO FINAL: " + pFinal);
+        saldoFinal.setText("SALDO FINAL: " + sFinal);
+        scrap.setText("SCRAP: " + scrapp);
+        sucata.setText("SUCATA: " + sucat);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true); //Mostrar o botão
         getSupportActionBar().setHomeButtonEnabled(true);      //Ativar o botão

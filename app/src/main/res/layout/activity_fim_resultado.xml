@@ -16,7 +16,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="TextView"
-        android:textSize="18sp"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/prodFinal" />
@@ -31,7 +32,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="TextView"
-        android:textSize="18sp"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -46,7 +48,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="TextView"
-        android:textSize="18sp"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/saldoFinal" />
@@ -61,7 +64,8 @@
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:text="TextView"
-        android:textSize="18sp"
+        android:textSize="21sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrap" />
