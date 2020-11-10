@@ -75,13 +75,17 @@ public class total extends AppCompatActivity {
         s7 = findViewById(R.id.s7);
         ob7 = findViewById(R.id.ob7);
 
-
+        prodFinal = findViewById(R.id.prodFinal);
+        saldoFinal = findViewById(R.id.saldoFinal);
+        scrap = findViewById(R.id.scrap);
+        sucata = findViewById(R.id.sucata);
+        modelo = findViewById(R.id.modelo);
 
         //activity inicio
         String grupo = preferences.getString("grupo","");
         String meta = preferences.getString("meta","");
         grupoNome.setText("Grupo: " + grupo);
-        met.setText("Meta diária: "+ meta);
+        met.setText("Meta: "+ meta);
 
         //hora1
         String acumulado1 = preferences.getString("acumulado1","");
@@ -152,6 +156,18 @@ public class total extends AppCompatActivity {
         proj7.setText("Projeção: " + projeção7);
         s7.setText("Saldo: " + saldo7);
         ob7.setText("Obs: " + obs7);
+
+        //fim do turno
+        String model = preferences.getString("modelo","");
+        String pFinal = preferences.getString("prodFinal","");
+        String sFinal = preferences.getString("saldoFinal","");
+        String scrapp = preferences.getString("scrap","");
+        String sucat = preferences.getString("sucata","");
+        modelo.setText("Modelo: " + model);
+        prodFinal.setText("PRODUÇÃO FINAL: " + pFinal);
+        saldoFinal.setText("SALDO FINAL: " + sFinal);
+        scrap.setText("SCRAP: " + scrapp);
+        sucata.setText("SUCATA: " + sucat);
 
         bt = findViewById(R.id.bt);
         bt.setOnClickListener(new View.OnClickListener() {

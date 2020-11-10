@@ -66,7 +66,7 @@ public class hora3 extends AppCompatActivity {
             String OBS3 = obs3.getText().toString();
 
             //Passa dados para outra activity
-            Intent salvar3 = new Intent(this, MainActivity.class);
+//            Intent salvar3 = new Intent(this, MainActivity.class);
 
             String metadiaria = preferences.getString("meta", "0");
             meta = Float.parseFloat(metadiaria);
@@ -88,7 +88,8 @@ public class hora3 extends AppCompatActivity {
             editor.putString("obs3", OBS3);
             editor.commit();
 
-            startActivity(salvar3);
+//            startActivity(salvar3);
+            finish();
         }
     }
 }

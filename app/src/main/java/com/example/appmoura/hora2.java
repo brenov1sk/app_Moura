@@ -62,7 +62,7 @@ public class hora2 extends AppCompatActivity {
             String OBS2 = obs2.getText().toString();
 
             //Passa dados para outra activity
-            Intent salvar2 = new Intent(hora2.this, MainActivity.class);
+//            Intent salvar2 = new Intent(hora2.this, MainActivity.class);
 
             String metadiaria = preferences.getString("meta", "0");
             meta = Float.parseFloat(metadiaria);
@@ -84,7 +84,8 @@ public class hora2 extends AppCompatActivity {
             editor.putString("obs2", OBS2);
             editor.commit();
 
-            startActivity(salvar2);
+//            startActivity(salvar2);
+            finish();
         }
     }
 }

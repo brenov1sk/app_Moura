@@ -59,7 +59,7 @@ public class fimTurno extends AppCompatActivity {
             String SCRAP = scrap.getText().toString();
             String SUCATA = sucata.getText().toString();
 
-            Intent salvar8 = new Intent(this, fimResultado.class);
+//            Intent salvar8 = new Intent(this, fimResultado.class);
 
             String metadiaria = preferences.getString("meta", "0");
             meta = Integer.parseInt(metadiaria);
@@ -79,7 +79,8 @@ public class fimTurno extends AppCompatActivity {
             editor.putString("sucata", SUCATA);
             editor.commit();
 
-            startActivity(salvar8);
+//            startActivity(salvar8);
+            finish();
         }
     }
 }

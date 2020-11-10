@@ -62,7 +62,7 @@ public class hora6 extends AppCompatActivity {
             String OBS6 = obs6.getText().toString();
 
             //Passa dados para outra activity
-            Intent salvar6 = new Intent(this, MainActivity.class);
+//            Intent salvar6 = new Intent(this, MainActivity.class);
 
             String metadiaria = preferences.getString("meta", "0");
             meta = Float.parseFloat(metadiaria);
@@ -84,7 +84,8 @@ public class hora6 extends AppCompatActivity {
             editor.putString("obs6", OBS6);
             editor.commit();
 
-            startActivity(salvar6);
+//            startActivity(salvar6);
+            finish();
         }
     }
 }

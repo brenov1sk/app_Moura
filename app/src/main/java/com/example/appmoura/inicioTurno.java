@@ -77,7 +77,7 @@ public class inicioTurno extends AppCompatActivity {
             String obs0 = editObs.getText().toString();
 
             //Passa dados para outra activity
-            Intent salvar0 = new Intent(inicioTurno.this, MainActivity.class);
+//            Intent salvar0 = new Intent(inicioTurno.this, MainActivity.class);
 
             bd.child("InicioTurno").child("grupo").push().setValue(grupo0);
             bd.child("InicioTurno").child("meta").push().setValue(meta0);
@@ -88,7 +88,8 @@ public class inicioTurno extends AppCompatActivity {
             editor.putString("modelo", obs0);
             editor.commit();
 
-            startActivity(salvar0);
+//            startActivity(salvar0);
+            finish();
         }
     }
 }
