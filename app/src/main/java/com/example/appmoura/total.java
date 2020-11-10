@@ -172,6 +172,7 @@ public class total extends AppCompatActivity {
             public void onClick(View v) {
                 editor.clear();
                 editor.commit();
+                finish();
             }
         });
 
@@ -191,4 +192,17 @@ public class total extends AppCompatActivity {
         }
         return true;
     }
+
+//    public void bt (View view){
+//
+//        SharedPreferences preferences = getSharedPreferences(DADOS, 0);
+//        SharedPreferences.Editor editor = preferences.edit();
+//
+//        editor.clear();
+//        editor.commit();
+//
+//        Intent apagar = new Intent(this, MainActivity.class);
+//        startActivity(apagar);
+//    }
+
 }
