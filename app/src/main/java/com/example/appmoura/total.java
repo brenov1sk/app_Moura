@@ -24,7 +24,6 @@ public class total extends AppCompatActivity {
     private TextView ac5, proj5, s5, ob5;
     private TextView ac6, proj6, s6, ob6;
     private TextView ac7, proj7, s7, ob7;
-    private TextView prodFinal, saldoFinal, scrap, sucata;
 
     private final String DADOS = "Dados";
 
@@ -73,11 +72,6 @@ public class total extends AppCompatActivity {
         proj7 = findViewById(R.id.proj7);
         s7 = findViewById(R.id.s7);
         ob7 = findViewById(R.id.ob7);
-
-        prodFinal = findViewById(R.id.prodFinal);
-        saldoFinal = findViewById(R.id.saldoFinal);
-        scrap = findViewById(R.id.scrap);
-        sucata = findViewById(R.id.sucata);
 
         //activity inicio
         String grupo = preferences.getString("grupo","");
@@ -154,17 +148,6 @@ public class total extends AppCompatActivity {
         proj7.setText("Projeção: " + projeção7);
         s7.setText("Saldo: " + saldo7);
         ob7.setText("Obs: " + obs7);
-
-        //fim do turno
-        String pFinal = preferences.getString("prodFinal","");
-        String sFinal = preferences.getString("saldoFinal","");
-        String scrapp = preferences.getString("scrap","");
-        String sucat = preferences.getString("sucata","");
-        prodFinal.setText("Produção final: " + pFinal);
-        saldoFinal.setText("Saldo final: " + sFinal);
-        scrap.setText("Scrap: " + scrapp);
-        sucata.setText("Sucata: " + sucat);
-
 
         bt = findViewById(R.id.bt);
         bt.setOnClickListener(new View.OnClickListener() {
