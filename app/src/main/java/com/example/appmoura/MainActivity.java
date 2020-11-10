@@ -136,31 +136,31 @@ public class MainActivity extends AppCompatActivity {
         opcoes opcao = new opcoes("Início do turno","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 1","0");
+        opcao = new opcoes("1ª hora","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 2","0");
+        opcao = new opcoes("2ª hora","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 3","0");
+        opcao = new opcoes("3ª hora","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 4","0");
+        opcao = new opcoes("4ª hora","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 5","0");
+        opcao = new opcoes("5ª hora","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 6","0");
+        opcao = new opcoes("6ª hora","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Hora 7","0");
+        opcao = new opcoes("7ª hora","0");
         this.listaOpcoes.add(opcao);
 
         opcao = new opcoes("Fechamento do turno","0");
         this.listaOpcoes.add(opcao);
 
-        opcao = new opcoes("Total", "0");
+        opcao = new opcoes("Total do dia", "0");
         this.listaOpcoes.add(opcao);
     }
 }

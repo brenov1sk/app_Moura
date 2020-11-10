@@ -90,70 +90,70 @@ public class total extends AppCompatActivity {
         String projeção1 = preferences.getString("projeção1","");
         String saldo1 = preferences.getString("saldo1","");
         String obs1 = preferences.getString("obs1","");
-        ac1.setText("Acumulado1: " + acumulado1);
-        proj1.setText("Projeção1: " + projeção1);
-        s1.setText("Saldo1: " + saldo1);
-        ob1.setText("Obs1: " + obs1);
+        ac1.setText("Acumulado: " + acumulado1);
+        proj1.setText("Projeção: " + projeção1);
+        s1.setText("Saldo: " + saldo1);
+        ob1.setText("Obs: " + obs1);
 
         //hora2
         String acumulado2 = preferences.getString("acumulado2","");
         String projeção2 = preferences.getString("projeção2","");
         String saldo2 = preferences.getString("saldo2","");
         String obs2 = preferences.getString("obs2","");
-        ac2.setText("Acumulado2: " + acumulado2);
-        proj2.setText("Projeção2: " + projeção2);
-        s2.setText("Saldo2: " + saldo2);
-        ob2.setText("Obs2: " + obs2);
+        ac2.setText("Acumulado: " + acumulado2);
+        proj2.setText("Projeção: " + projeção2);
+        s2.setText("Saldo: " + saldo2);
+        ob2.setText("Obs: " + obs2);
 
         //hora3
         String acumulado3 = preferences.getString("acumulado3","");
         String projeção3 = preferences.getString("projeção3","");
         String saldo3 = preferences.getString("saldo3","");
         String obs3 = preferences.getString("obs3","");
-        ac3.setText("Acumulado3: " + acumulado3);
-        proj3.setText("Projeção3: " + projeção3);
-        s3.setText("Saldo3: " + saldo3);
-        ob3.setText("Obs3: " + obs3);
+        ac3.setText("Acumulado: " + acumulado3);
+        proj3.setText("Projeção: " + projeção3);
+        s3.setText("Saldo: " + saldo3);
+        ob3.setText("Obs: " + obs3);
 
         //hora4
         String acumulado4 = preferences.getString("acumulado4","");
         String projeção4 = preferences.getString("projeção4","");
         String saldo4 = preferences.getString("saldo4","");
         String obs4 = preferences.getString("obs4","");
-        ac4.setText("Acumulado4: " + acumulado4);
-        proj4.setText("Projeção4: " + projeção4);
-        s4.setText("Saldo4: " + saldo4);
-        ob4.setText("Obs4: " + obs4);
+        ac4.setText("Acumulado: " + acumulado4);
+        proj4.setText("Projeção: " + projeção4);
+        s4.setText("Saldo: " + saldo4);
+        ob4.setText("Obs: " + obs4);
 
         //hora5
         String acumulado5 = preferences.getString("acumulado5","");
         String projeção5 = preferences.getString("projeção5","");
         String saldo5 = preferences.getString("saldo5","");
         String obs5 = preferences.getString("obs5","");
-        ac5.setText("Acumulado5: " + acumulado5);
-        proj5.setText("Projeção5: " + projeção5);
-        s5.setText("Saldo5: " + saldo5);
-        ob5.setText("Obs5: " + obs5);
+        ac5.setText("Acumulado: " + acumulado5);
+        proj5.setText("Projeção: " + projeção5);
+        s5.setText("Saldo: " + saldo5);
+        ob5.setText("Obs: " + obs5);
 
         //hora6
         String acumulado6 = preferences.getString("acumulado6","");
         String projeção6 = preferences.getString("projeção6","");
         String saldo6 = preferences.getString("saldo6","");
         String obs6 = preferences.getString("obs6","");
-        ac6.setText("Acumulado6: " + acumulado6);
-        proj6.setText("Projeção6: " + projeção6);
-        s6.setText("Saldo6: " + saldo6);
-        ob6.setText("Obs6: " + obs6);
+        ac6.setText("Acumulado: " + acumulado6);
+        proj6.setText("Projeção: " + projeção6);
+        s6.setText("Saldo: " + saldo6);
+        ob6.setText("Obs: " + obs6);
 
         //hora7
         String acumulado7 = preferences.getString("acumulado7","");
         String projeção7 = preferences.getString("projeção7","");
         String saldo7 = preferences.getString("saldo7","");
         String obs7 = preferences.getString("obs7","");
-        ac7.setText("Acumulado7: " + acumulado7);
-        proj7.setText("Projeção7: " + projeção7);
-        s7.setText("Saldo7: " + saldo7);
-        ob7.setText("Obs7: " + obs7);
+        ac7.setText("Acumulado: " + acumulado7);
+        proj7.setText("Projeção: " + projeção7);
+        s7.setText("Saldo: " + saldo7);
+        ob7.setText("Obs: " + obs7);
 
         //fim do turno
         String pFinal = preferences.getString("prodFinal","");
@@ -191,6 +191,4 @@ public class total extends AppCompatActivity {
         }
         return true;
     }
-
-
 }
