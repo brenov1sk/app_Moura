@@ -71,7 +71,7 @@ public class hora1 extends AppCompatActivity {
             meta = Integer.parseInt(metadiaria);
             ac1 = Integer.parseInt(ACUMULADO1);
             projecao1 = ((ac1 / 1) * 8);
-            saldo1 = projecao1 - meta;
+            saldo1 = (projecao1 - meta);
 
             bd.child("hora1").child("acumulado").push().setValue(ACUMULADO1);
             bd.child("hora1").child("obs").push().setValue(OBS1);

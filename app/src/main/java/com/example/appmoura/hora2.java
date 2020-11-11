@@ -70,13 +70,16 @@ public class hora2 extends AppCompatActivity {
             projecao2 = ((ac2 / 2) * 8);
             saldo2 = projecao2 - meta;
 
+            int proj = Math.round(projecao2);
+            int s = Math.round(saldo2);
+
             bd.child("hora2").child("acumulado").push().setValue(ACUMULADO2);
             bd.child("hora2").child("obs").push().setValue(OBS2);
             bd.child("hora2").child("projecao").push().setValue(projecao2);
             bd.child("hora2").child("saldo").push().setValue(saldo2);
 
-            String proje = Float.toString(projecao2);
-            String sald = Float.toString(saldo2);
+            String proje = Integer.toString(proj);
+            String sald = Integer.toString(s);
 
             editor.putString("acumulado2", ACUMULADO2);
             editor.putString("projeção2", proje);

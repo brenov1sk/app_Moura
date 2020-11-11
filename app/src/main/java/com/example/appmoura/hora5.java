@@ -75,8 +75,10 @@ public class hora5 extends AppCompatActivity {
             bd.child("hora5").child("projecao").push().setValue(projecao5);
             bd.child("hora5").child("saldo").push().setValue(saldo5);
 
-            String proje5 = Float.toString(projecao5);
-            String sald5 = Float.toString(saldo5);
+            int proj = Math.round(projecao5);
+            int s = Math.round(saldo5);
+            String proje5 = Integer.toString(proj);
+            String sald5 = Integer.toString(s);
 
             editor.putString("acumulado5", ACUMULADO5);
             editor.putString("projeção5", proje5);
